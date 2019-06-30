@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Psychic Game</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
 
 </head>
 
@@ -117,7 +117,8 @@
     <script type="text/javascript">
 
         $(Document).ready(function () {
-            var computerPick = math.floor(Math.random() * 4) + 1;
+            
+            var computerPick = math.floor(Math.random());
             var PsychicGame = false;
 
             console.log("Computer Pick: " + computerPick);
@@ -141,6 +142,9 @@
 
             });
         });
+
+
+
 
 
 
