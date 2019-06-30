@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychic Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Psychic Game</h1>
+        <h2 class="text-center">See if you can guess the letter the computer is thinking of!</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Wins</h3>
+                <div class="card-body text-center">
+                    <h1 id="computer-pick">-</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Losses</h3>
+                <div class="card-body text-center">
+                    <h1 id="computer-pick">-</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Guesses Left</h3>
+                <div class="card-body text-center">
+                    <h1 id="computer-pick">-</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Guesses Made</h3>
+                <div class="card-body text-center">
+                    <h1 id="computer-pick">-</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Computer Pick</h3>
+                <div class="card-body text-center">
+                    <h1 id="computer-pick">???</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-2">
+                <h3 class="card-header">You Pick</h3>
+                <div class="card-body text-center">
+                    <button id="button-a" class="btn btn-danger btn-choice" value="a">
+                        <h1>c</h1>
+                    </button>
+                    <button id="button-b" class="btn btn-danger btn-choice" value="b">
+                        <h1>h</h1>
+                    </button>
+                    <button id="button-c" class="btn btn-danger btn-choice" value="c">
+                        <h1>i</h1>
+                    </button>
+                    <button id="button-d" class="btn btn-danger btn-choice" value="d">
+                        <h1>c</h1>
+                    </button>
+                    <button id="button-e" class="btn btn-danger btn-choice" value="e">
+                        <h1>a</h1>
+                    </button>
+                    <button id="button-f" class="btn btn-danger btn-choice" value="f">
+                        <h1>g</h1>
+                    </button>
+                    <button id="button-g" class="btn btn-danger btn-choice" value="g">
+                        <h1>o</h1>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-2">
+                <h3 class="card-header">Result</h3>
+                <div class="card-body text-center">
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(Document).ready(function () {
+            var computerPick = math.floor(Math.random() * 4) + 1;
+            var PsychicGame = false;
+
+            console.log("Computer Pick: " + computerPick);
+
+            $(".btn-choice").on("click", function () {
+                if (PsychicGame !== true) {
+                    var yourPick = $(this).val();
+                    console.log("Your Pick: " + yourPick);
+
+                    $("#computer-pick").text(computerPick);
+                    if (parseInt(yourPick) === computerPick) {
+                        $("#result").text("Yep! You got it! Refresh the page to play again.");
+                        PsychicGame = true;
+                    }
+
+                    else {
+                        $("#result").text("Nope. Refresh the page to play again.");
+                        PsychicGame = true;
+                    }
+                }
+
+            });
+        });
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
